@@ -42,7 +42,6 @@ function collectTeamInfo() {
                 .then(function (respo) {
                     console.log("Manager " + response.username + " is now entered into the system.");
                     managerCards.push(new Manager(response.username, response.id, response.email, respo.officeNumber));
-                    console.log(managerCards);
                     askIfMoreEmployees();
                 })
             }
@@ -83,20 +82,17 @@ function askIfMoreEmployees() {
 function createDirectoryFinal() {
     if (managerCards.length > 0) {
     for (i=0;i<managerCards.length;i++) {
-        console.log(managerCards);
         managerString += "<div class='card' style='width: 18rem;'><div class='card-body'><h5 class='card-title'>Manager</h5><h6 class='card-subtitle mb-2 text-muted'> Name: " + managerCards[i].name + "</h6><p>Employee ID: " + managerCards[i].id + "</p><p>E-mail: " + managerCards[i].email + "</p><p>Office Number: " + managerCards[i].officeNumber + "</p>";
     };
     }
 
     if(engineerCards.length > 0) {
     for (j=0;j<engineerCards.length;j++) {
-        console.log(engineerCards);
         engineerString += `<div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">Engineer</h5><h6 class="card-subtitle mb-2 text-muted"> Name: ${engineerCards[j].name} </h6><p>Employee ID: ${engineerCards[j].id}</p><p>E-mail: ${engineerCards[j].email}</p><p>Github Username: ${engineerCards[j].github} </p>`;
     };}
 
     if(internCards.length > 0) {
     for (k=0;k<internCards.length;k++) {
-        console.log(internCards);
         internString += `<div class="card" style="width: 18rem;"><div class="card-body"><h5 class="card-title">Intern</h5><h6 class="card-subtitle mb-2 text-muted"> Name: ${internCards[k].name} </h6><p>Employee ID: ${internCards[k].id}</p><p>E-mail: ${internCards[k].email}</p><p>School: ${internCards[k].school} </p>`;
     };
 }
